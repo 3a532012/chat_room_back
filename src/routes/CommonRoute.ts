@@ -1,7 +1,7 @@
 import CommonController from "../controller/CommonController"
-import Route from "./route";
+import Route from "./RouteInterface";
 
-class MessageRoute extends Route {
+class CommonRoute extends Route {
     private commonController = new CommonController();
 
     constructor() {
@@ -14,4 +14,4 @@ class MessageRoute extends Route {
     }
 }
 
-export default MessageRoute;
+export default CommonRoute;

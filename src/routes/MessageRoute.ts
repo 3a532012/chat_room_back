@@ -1,5 +1,5 @@
 import MessageController from "../controller/MessageController"
-import Route from "./route";
+import Route from "./RouteInterface";
 
 class MessageRoute extends Route {
     private messageController = new MessageController();
