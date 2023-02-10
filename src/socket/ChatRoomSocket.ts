@@ -1,17 +1,18 @@
 import SocketAbstract from './SocketAbstract'
 import http from 'http'
+import { ServerOptions,Socket } from 'socket.io'
 import {Request, Response} from "express";
 
 class ChatRoomSocket extends SocketAbstract{
 
-    constructor(server:http.Server, name: string){
-        super(server, name)
+    constructor(server:http.Server, options?: Partial<ServerOptions>){
+        super(server, options)
     }
-    connect(req: Request, res: Response) {
-        res.send('connect')
+    connect(socket:Socket) {
+        console.log(`back end socket connect socket ID: ${socket.id}`)
     }
-    disconnect(req: Request, res: Response) {
-        res.send('leave');
+    disconnect(socket:Socket) {
+        console.log(`back end socket disconnect socket ID: ${socket.id}`)
     }
     
 }
